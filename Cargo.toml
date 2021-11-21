@@ -1,13 +1,17 @@
 [package]
-name = "twitch-send"
-description = "Command line tool to send messages to twitch"
-version = "1.0.3-alpha.0"
-authors = ["hardliner66 <hardliner66@gmail.com>"]
-edition = "2018"
+name = "twitch-multi-ban"
+description = "Command line tool to ban alt accounts on Twitch"
+publish = false
+version = "1.1.1"
+authors = ["hardliner66 <hardliner66@gmail.com>", "mod-tc authors <mail@mail.com>"]
+edition = "2021"
 license-file = "LICENSE"
-repository = "https://github.com/hardliner66/twitch-send"
+repository = "https://github.com/simonsan/twitch-multi-ban.git"
 readme = "README.md"
 
 [dependencies]
-twitch-irc = "2.2.0"
-tokio = { version = "1.0", features = ["rt", "rt-multi-thread", "time", "sync", "macros"] }
+twitch-irc = { version = "3.0.1", default-features = false, features = ["transport-tcp-rustls-webpki-roots"] }
+tokio = { version = "1.14.0", features = ["rt", "rt-multi-thread", "time", "sync", "macros"] }
+ureq = "2.3.1"
+serde_yaml = "0.8.21"
+serde = { version = "1.0.130", features = ["derive"] }
